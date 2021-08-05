@@ -10,7 +10,7 @@ layout: true
       <td style="text-align:right"><a href="https://www.slub-dresden.de/">www.slub-dresden.de</a></td>
     </tr>
     <tr>
-      <td style="text-align:right">Referat 2.5</td>
+      <td style="text-align:right">Referat 4.3</td>
       <td />
     </tr>
   </table>
@@ -22,13 +22,13 @@ layout: true
       <td style="text-align:left"><b>Kay-Michael Würzner</b></td>
     </tr>
     <tr>
-      <td style="text-align:left">Referat 2.5</td>
+      <td style="text-align:left">Referat 4.3</td>
     </tr>
     <tr>
-      <td style="font-size:8pt"><b>Date</b></td>
+      <td style="font-size:8pt"><b>06.08.2021</b></td>
     </tr>
     <tr>
-      <td style="font-size:8pt">Event</td>
+      <td style="font-size:8pt">Digital Herrnhut in textwissenschaftlichen Kontexten</td>
     </tr>
   </table>
 </div>
@@ -38,16 +38,28 @@ layout: true
 class: title-slide
 count: false
 
-# Title
-## Subtitle
+# Vom Digitalisat in die virtuelle Forschungsumgebung
+## Workflowetappen
 
 ---
 
 # Overview
 
-- Section 1
-  + Subsection 1
-- Section 2
+- Ausgangspunkt: **Digitalisat**
+    + Handschriften
+    + Drucke
+    + (Webseiten, Tweets, PDFs etc.)
+- Ziel: **virtuelle Forschungsumgebung**
+    + `DiaCollo`
+    + (`Voyant`)
+- Stationen:
+    + Texterkennung
+        * OLR, OCR, HTR
+        * inkl. Training
+    + TEI-Konvertierung & -Edition
+    + linguistische Annotation
+        * Tokenisierung, Lemmatisierung, PoS-Tagging
+    + Indizierung
 
 ---
 
