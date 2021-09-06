@@ -232,14 +232,14 @@ count: false
    * Basis: HTR Konzilsprotokolle  
      <img src="https://camo.githubusercontent.com/06493331adfcac6c297a8cd048fcb77742088085c31cf7c5046c4c17c06d4bbc/68747470733a2f2f66696c65732e6769747465722e696d2f77727a6e722f744153492f4f43522d442d494d472d4445535045434b5f303030355f72315f72316c32362e706e67"/>
     ```
-    $ make training MODEL_NAME=htr PSM=13 MAX_ITERATIONS=30000
+    $ make training MODEL_NAME=htr MAX_ITERATIONS=30000
     $ tesseract htrline1.png - -l htr --psm 13 --dpi 300
     sowohl, als auch eb bei der Schrift etwas zu er-
     ```
    * Finetuning: HTR Herrnhut  
      <img src="img/GT_0005_r1_l1.bin.png"/>
     ```
-    $ make training START_MODEL=htr MODEL_NAME=hetjens PSM=13 MAX_ITERATIONS=3000
+    $ make training START_MODEL=htr MODEL_NAME=hetjens MAX_ITERATIONS=3000
     $ tesseract hetjens-no1.png - -l hetjens --psm 13 --dpi 300
     e1 de erten. hrieo der Geme une
     ```
@@ -250,12 +250,12 @@ count: false
 
 - Evaluierung (extern):
 
-  | **Daten** | **Modell** | **CER (%)** |
-  | --- | --- | --- |
-  | Konzilsprotokolle (train) | htr | ? |
-  | Konzilsprotokolle (val) | htr | ? |
-  | Herrnhut (train) | htr+hetjens | 5.0 |
-  | Herrnhut (val) | htr+hetjens | 35.7 |
+| **Daten** | **Modell** | **CER (%)** |
+| --- | --- | --- |
+| Konzilsprotokolle (train) | htr | ? |
+| Konzilsprotokolle (val) | htr | ? |
+| Herrnhut (train) | htr+hetjens | 5.0 |
+| Herrnhut (val) | htr+hetjens | 35.7 |
 
 ---
 
