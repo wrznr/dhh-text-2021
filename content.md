@@ -205,12 +205,12 @@ count: false
 
 .cols[
 .fourty[
-- Herrnhut Nachrichten 1806 (&lt;800 Seiten)
-- GT-Erstellung mittels LAREX (z.Z. 15 Seiten / 212 Zeilen)
-   <img src="img/herrnhut-hetjens-larex-transkription.png"/>
+- Herrnhut Nachrichten 1806 (&gt;800 Seiten)
+- GT-Erstellung mittels LAREX (z.Z. 15 Seiten)
    <img src="img/herrnhut-hetjens-larex-transkription1.png"/>
 ]
 .sixty[
+<img src="img/herrnhut-hetjens-larex-transkription.png"/>
 <img src="img/herrnhut-hetjens-larex-transkription2.png"/>
 ]
 ]
@@ -219,17 +219,10 @@ count: false
 
 # Training und *Ground Truth*: Beispiel
 
-.cols[
-.fourty[
 - keine existierenden HTR-Modelle  
    → Transkription von Grund auf  
-   → Pretraining mit großem existierendem GT
-]
-.sixty[
-<img src="https://camo.githubusercontent.com/06493331adfcac6c297a8cd048fcb77742088085c31cf7c5046c4c17c06d4bbc/68747470733a2f2f66696c65732e6769747465722e696d2f77727a6e722f744153492f4f43522d442d494d472d4445535045434b5f303030355f72315f72316c32362e706e67" width="600px"/>
-- z.B. [Konzilsprotokolle Universitätsarchiv Greifswald](https://zenodo.org/record/215383#.YJFuPHVfjDs) (8770 Zeilen)
-]
-]
+   → Pretraining mit großem existierendem GT  
+     z.B. [Konzilsprotokolle Universitätsarchiv Greifswald](https://zenodo.org/record/215383#.YJFuPHVfjDs) (8770 Zeilen)
 
 ---
 
@@ -250,9 +243,16 @@ count: false
     $ tesseract hetjens-no1.png - -l hetjens --psm 13 --dpi 300
     e1 de erten. hrieo der Geme une
     ```
-- Evaluierung:
+
+---
+
+# Training und *Ground Truth*: Beispiel
+
+- Evaluierung (extern):
+
   | **Daten** | **Modell** | **CER (%)** |
   | --- | --- | --- |
+  | Konzilsprotokolle (train) | htr | ? |
   | Konzilsprotokolle (val) | htr | ? |
   | Herrnhut (train) | htr+hetjens | 5.0 |
   | Herrnhut (val) | htr+hetjens | 35.7 |
