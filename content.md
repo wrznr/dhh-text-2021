@@ -256,7 +256,26 @@ count: false
   | Konzilsprotokolle (val) | htr | ? |
   | Herrnhut (train) | htr+hetjens | 5.0 |
   | Herrnhut (val) | htr+hetjens | 35.7 |
-  
+
+---
+
+# Training und *Ground Truth*: Optimierungen
+
+- Ergebnis des Experiments: **hochspezifisches** Modell
+    + Aufwand im Allgemeinen nicht leistbar
+- Optionen
+    + **Transfer-Learning**
+        * Anpassung eines existierenden, ähnlichen Modells mit wenigen Zeilen GT auf spezifische Vorlage
+    + **generische Modelle**
+        * auf Basis großer Mengen diversen GTs trainierte Modelle mit Allgemeinheitsanspruch 
+        * schwierig im Bereich HTR
+    + **synthetisches Training**
+        * mit Hilfe großer Textmengen und verschiedener Computerschriftarten automatisch erzeugter GT
+        * Erzeugung einer realistischeren Optik durch
+    + **Augmentierung**
+        * größere Modellrobustheit und Variantenstabilität durch gezieltes Verrauschen
+        * Schrägstellung, Spiegelung, Störpixel, horizontale und vertikale Verzerrung etc.
+
 ---
 
 class: part-slide
