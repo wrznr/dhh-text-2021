@@ -242,10 +242,10 @@ count: false
    * Finetuning: HTR Herrnhut  
      <img src="img/GT_0005_r1_l1.bin.png"/>
     ```
-    $ make training START_MODEL=htr MODEL_NAME=hetjens \
-      MAX_ITERATIONS=3000
+    $ make training MODEL_NAME=hetjens MAX_ITERATIONS=3000 \
+                    START_MODEL=htr
     $ tesseract hetjens-no1.png - -l hetjens --psm 13 --dpi 300
-    e1 de erten. hrieo der Geme une
+    No 1. des eren Theiles der Gemein⸗
     ```
 
 ---
@@ -256,34 +256,36 @@ count: false
 
 | **Daten** | **Modell** | **CER (%)** |
 | --- | --- | --- |
-| Konzilsprotokolle (train) | htr | ? |
-| Konzilsprotokolle (val) | htr | ? |
-| Herrnhut (train) | htr+hetjens | 5.0 |
-| Herrnhut (val) | htr+hetjens | 35.7 |
+| Konzilsprotokolle (train) | htr | 5.4 |
+| Konzilsprotokolle (val) | htr | 11.2 |
+| Herrnhut | htr | 59.4 |
+| Herrnhut (train) | htr→hetjens | 0.6 |
+| Herrnhut (val) | htr→hetjens | 15.8 |
 
 ---
 
 # Training und *Ground Truth*: Optimierungen
 
 - mehr Trainingsdaten
-    + Erfahrungen mit gedrucktem Material: 10–15 % Transkription für verlässliches buchspezifisches Modell nötig
+    + Erfahrungen mit gedrucktem Material: für verlässliches buchspezifisches Modell
+        * ~20-40 Seiten Transkriptionen (von Grund auf), oder
+        * ~100-200 Zeilen Transkriptionen (bei Finetuning)
     + für Handschriften
-        * kritische Menge an Zeilen nötig (Gefahr *overfitting*)
+        * kritische Menge an Zeilen nötig (Gefahr *Overfitting*)
         * höhere Binnenvarianz als bei Drucken
-- bessere Bildvorverarbeitung (i.e. Binarisierung)
+- bessere Bildvorverarbeitung (v.a. Binarisierung)
     + relativ viele Artefakte in den Zeilenbildern
     + Konzilsprotokolle „sauberer“
 - variante und robuste Eingangsmodelle
     + schmutzigere Trainingsdaten
     + mehr Handschriften (e.g. [e-manuscripta.ch](https://www.e-manuscripta.ch/zuz/briefe/content/wpage/22344))
+    + Pretraining mit synthetischen Trainingsdaten
 
 ---
 
 # Training und *Ground Truth*: Optimierungen
 
-- Ergebnis des Experiments: **buchspezifisches** Modell
-    + Aufwand im Allgemeinen nicht leistbar
-- Optionen
+- Optionen allgemein
     + **Transfer-Learning**
         * Anpassung eines existierenden, ähnlichen Modells mit wenigen Zeilen GT auf spezifische Vorlage
     + **generische Modelle**
@@ -295,6 +297,9 @@ count: false
     + **Augmentierung**
         * größere Modellrobustheit und Variantenstabilität durch gezieltes Verrauschen
         * Schrägstellung, Spiegelung, Störpixel, horizontale und vertikale Verzerrung etc.
+- Fazit allgemein
+    + Aufwand **werkspezifisches** Modell meist nicht leistbar
+    + also **schrift/materialspezifische** Modelle und ggf. Werk-Finetuning
 
 ---
 
