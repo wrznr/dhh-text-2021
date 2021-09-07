@@ -10,7 +10,7 @@ layout: true
       <td style="text-align:right"><a href="https://www.slub-dresden.de/">www.slub-dresden.de</a></td>
     </tr>
     <tr>
-      <td style="text-align:right">Referat 4.3</td>
+      <td style="text-align:right">Referate 2.5 und 4.3</td>
       <td />
     </tr>
   </table>
@@ -19,16 +19,16 @@ layout: true
 <div class="my-title-footer">
   <table>
     <tr>
-      <td style="text-align:left"><b>Kay-Michael Würzner</b></td>
+      <td style="text-align:left"><b>Robert Sachunsky, Kay-Michael Würzner</b></td>
     </tr>
     <tr>
-      <td style="text-align:left">Referat 4.3</td>
+      <td style="text-align:left">Referate 2.5 und 4.3</td>
     </tr>
     <tr>
-      <td style="font-size:8pt"><b>06.08.2021</b></td>
+      <td style="font-size:8pt"><b>07.09.2021</b></td>
     </tr>
     <tr>
-      <td style="font-size:8pt">Digital Herrnhut in textwissenschaftlichen Kontexten</td>
+      <td style="font-size:8pt">Digital Herrnhut – Zweiter Sommerworkshop/td>
     </tr>
   </table>
 </div>
@@ -38,18 +38,20 @@ layout: true
 class: title-slide
 count: false
 
-# Vom Digitalisat in die virtuelle Forschungsumgebung
-## Workflowetappen
+# Vom (Handschriften-)Digitalisat zum maschinenlesbaren Text
+## Erste Ergebnisse
 
 ---
 
 # Überblick
 
 - erste im Rahmen des LDP digitalisierten Materialien aus dem Unitätsarchiv Herrnhut online: https://digital.slub-dresden.de/werkansicht/dlf/435266/1/
+    + wunderschöbe Digitalisate
+    + noch ohne Volltext
 - Ziele für heute
     + Handschriftenerkennung: Wie funktioniert's?
     + Training und *Ground Truth*
-    + Struktur- und Texterfassung mit Larex
+    + erste Ergebnisse
 
 ---
 
