@@ -222,8 +222,8 @@ count: false
 - keine existierenden HTR-Modelle  
    → Transkription von Grund auf  
    → Pretraining mit großem existierendem GT  
-     z.B. [Konzilsprotokolle Universitätsarchiv Greifswald](https://zenodo.org/record/215383#.YJFuPHVfjDs) (8770 Zeilen)
-
+     z.B. [Konzilsprotokolle Universitätsarchiv Greifswald](https://zenodo.org/record/215383#.YJFuPHVfjDs) (8770 Zeilen)  
+     <img src="https://camo.githubusercontent.com/06493331adfcac6c297a8cd048fcb77742088085c31cf7c5046c4c17c06d4bbc/68747470733a2f2f66696c65732e6769747465722e696d2f77727a6e722f744153492f4f43522d442d494d472d4445535045434b5f303030355f72315f72316c32362e706e67"/>
 ---
 
 # Training und *Ground Truth*: Beispiel
