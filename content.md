@@ -28,7 +28,7 @@ layout: true
       <td style="font-size:8pt"><b>07.09.2021</b></td>
     </tr>
     <tr>
-      <td style="font-size:8pt">Digital Herrnhut – Zweiter Sommerworkshop/td>
+      <td style="font-size:8pt">Digital Herrnhut – Zweiter Sommerworkshop</td>
     </tr>
   </table>
 </div>
@@ -46,7 +46,7 @@ count: false
 # Überblick
 
 - erste im Rahmen des LDP digitalisierten Materialien aus dem Unitätsarchiv Herrnhut online: https://digital.slub-dresden.de/werkansicht/dlf/435266/1/
-    + wunderschöbe Digitalisate
+    + wunderschöne Digitalisate
     + noch ohne Volltext
 - Ziele für heute
     + Handschriftenerkennung: Wie funktioniert's?
@@ -221,11 +221,12 @@ count: false
 
 # Training und *Ground Truth*: Beispiel
 
-- keine existierenden HTR-Modelle  
+- keine existierenden HTR-Modelle für Tesseract
    → Transkription von Grund auf  
-   → Pretraining mit großem existierendem GT  
+   → (Pre-)Training mit großem existierendem GT  
      z.B. [Konzilsprotokolle Universitätsarchiv Greifswald](https://zenodo.org/record/215383#.YJFuPHVfjDs) (8770 Zeilen)  
      <img src="https://camo.githubusercontent.com/06493331adfcac6c297a8cd048fcb77742088085c31cf7c5046c4c17c06d4bbc/68747470733a2f2f66696c65732e6769747465722e696d2f77727a6e722f744153492f4f43522d442d494d472d4445535045434b5f303030355f72315f72316c32362e706e67"/>
+- 
 ---
 
 # Training und *Ground Truth*: Beispiel
@@ -241,7 +242,8 @@ count: false
    * Finetuning: HTR Herrnhut  
      <img src="img/GT_0005_r1_l1.bin.png"/>
     ```
-    $ make training START_MODEL=htr MODEL_NAME=hetjens MAX_ITERATIONS=3000
+    $ make training START_MODEL=htr MODEL_NAME=hetjens \
+      MAX_ITERATIONS=3000
     $ tesseract hetjens-no1.png - -l hetjens --psm 13 --dpi 300
     e1 de erten. hrieo der Geme une
     ```
@@ -263,7 +265,23 @@ count: false
 
 # Training und *Ground Truth*: Optimierungen
 
-- Ergebnis des Experiments: **hochspezifisches** Modell
+- mehr Trainingsdaten
+    + Erfahrungen mit gedrucktem Material: 10–15 % Transkription für verlässliches buchspezifisches Modell nötig
+    + für Handschriften
+        * kritische Menge an Zeilen nötig (Gefahr *overfitting*)
+        * höhere Binnenvarianz als bei Drucken
+- bessere Bildvorverarbeitung (i.e. Binarisierung)
+    + relativ viele Artefakte in den Zeilenbildern
+    + Konzilsprotokolle „sauberer“
+- variante und robuste Eingangsmodelle
+    + schmutzigere Trainingsdaten
+    + mehr Handschriften (e.g. [e-manuscripta.ch](https://www.e-manuscripta.ch/zuz/briefe/content/wpage/22344))
+
+---
+
+# Training und *Ground Truth*: Optimierungen
+
+- Ergebnis des Experiments: **buchspezifisches** Modell
     + Aufwand im Allgemeinen nicht leistbar
 - Optionen
     + **Transfer-Learning**
@@ -282,27 +300,12 @@ count: false
 
 class: part-slide
 
-# Struktur- und Texterfassung mit Larex
-
----
-
-# Struktur- und Texterfassung mit Larex
-
-- Webapplikation für bequeme/schnelle Transkription
-    + Struktur- und Textebene
-- bereits am Institut für Germanistik im Einsatz
-
-![](https://github.com/OCR4all/LAREX/raw/master/documentation/larex.gif)
-
----
-
-class: part-slide
-
 # Diskussion und lose Enden
 
 - verlässliche, automatische Handschriftenerkennung in Reichweite
 - Digital Herrnhut
-    + ...
+    + vglw. normierte und sehr gut leserliche Handschriften
+    + viel Material „aus einer Hand“
 - GT-Problematik
     + gemischtes Vorgehen
         * existierende Kurrentdatensätze als Grundlage
